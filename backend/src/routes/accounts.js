@@ -4,7 +4,7 @@ import { createAccount, deleteAccount, getAccount, getAccounts, getAccountTypes 
 const router = Router();
 
 router.get("/", async (req, res) => {
-  const accounts = await getAccounts();
+  const accounts = await getAccounts(req.query);
   res.json(accounts);
 });
 

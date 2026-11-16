@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-export default function TransactieTable() {
+export default function TransactionsTable() {
   const [transacties, setTransacties] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/api/transacties");
+      const res = await fetch("/api/transactions");
       const data = await res.json();
       setTransacties(data);
     }
@@ -24,11 +24,12 @@ export default function TransactieTable() {
           <thead>
             <tr>
               <th>id</th>
-              <th>van_account_id</th>
-              <th>naar_account_id</th>
-              <th>bedrag</th>
-              <th>transactietype_id</th>
-              <th>beschrijving</th>
+              <th>from_account</th>
+              <th>to_account</th>
+              <th>amount</th>
+              <th>transaction_type</th>
+              <th>transaction_date</th>
+              <th>description</th>
             </tr>
           </thead>
           <tbody>
@@ -36,11 +37,12 @@ export default function TransactieTable() {
               transacties.map(transactie =>
                 <tr key={transactie.id}>
                   <td>{transactie.id}</td>
-                  <td>{transactie.van_account_id}</td>
-                  <td>{transactie.naar_account_id}</td>
-                  <td>{transactie.bedrag}</td>
-                  <td>{transactie.transactietype_id}</td>
-                  <td>{transactie.beschrijving}</td>
+                  <td>{transactie.from_account}</td>
+                  <td>{transactie.to_account}</td>
+                  <td>{transactie.amount}</td>
+                  <td>{transactie.transaction_type}</td>
+                  <td>{transactie.transaction_date}</td>
+                  <td>{transactie.description}</td>
                 </tr>
               )
             }

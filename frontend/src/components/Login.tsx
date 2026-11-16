@@ -3,19 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { useNavigate } from "react-router-dom";
 
-interface Props {
-  isPennie: boolean;
-}
-
-function Login({ isPennie }: Props) {
-
-  // const [pwd, setPwd] = useState("");
-
+export default function Login({ isPennie }) {
   const loginName = isPennie ? "Pennie login" : "Pluizen login";
-
   const navigate = useNavigate();
+
   function handleClick() {
-    isPennie ? navigate("/pennie") : navigate("/pluis");
+    isPennie ? navigate("/penniepagina") : navigate("/pluizenpagina");
   }
 
   return (
@@ -42,5 +35,3 @@ function Login({ isPennie }: Props) {
     </Container>
   )
 }
-
-export default Login;

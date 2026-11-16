@@ -1,11 +1,11 @@
 import Logout from "../components/Logout";
-import TransactieTable from "../components/TransactieTable";
+import TransactionsTable from "../components/TransactionTable";
 
 function Pennie() {
   return (
     <>
       <h1>Penniepagina</h1>
-      <TransactieTable />
+      <TransactionsTable />
       <Logout />
     </>
   );

@@ -15,28 +15,6 @@ CREATE TABLE accounts(
     CONSTRAINT fk_account_type FOREIGN KEY (account_type_id) REFERENCES account_types(id)
 );
 
-INSERT INTO accounts (name, balance, account_type_id) VALUES
-('pennierekening', 0, 4),
-('sjb_beer', 0, 4),
-('overig', 0, 4),
-('Felix', 0, 1);
-
-INSERT INTO accounts (name, balance, initiation_date, account_type_id) VALUES
-('Sander', 0, '2023-12-01', 2),
-('Chef', 0, '2023-12-01', 2),
-('Melle', 0, '2023-12-01', 2),
-('Yordi', 0, '2023-12-01', 2),
-('Krijn', 0, '2023-12-01', 2),
-('Gijs', 0, '2024-11-01', 2),
-('Kamil', 0, '2024-11-01', 2),
-('Roald', 0, '2023-02-01', 2),
-('Ilan', 0, '2023-02-01', 3),
-('Marnix', 0, '2023-02-01', 2),
-('Redouan', 0, '2025-11-22', 2),
-('Bert', 0, '2025-11-22', 2),
-('Deef', 0, '2025-11-22', 2),
-('Duco', 0, '2025-11-22', 2);
-
 CREATE TABLE transaction_participants(
     id INT PRIMARY KEY AUTO_INCREMENT,
     transaction_id INT NOT NULL,
